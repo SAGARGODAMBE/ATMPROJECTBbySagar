@@ -18,6 +18,7 @@ public class OptionMenu  extends AccountInfo{
 	
 		public void getLogin() throws IOException{
 			int x = 1;
+			displayWelcome();
 		
 			do{
 				try {
@@ -26,8 +27,7 @@ public class OptionMenu  extends AccountInfo{
 					data.put(9876543, 9876);
 					data.put(4567890, 1234);
 					
-					System.out.println("Welcome to the ATM!");
-					
+		
 					System.out.println("Enter your Customer number: ");
 					setCustmorNumber(menuInput.nextInt());
 					
@@ -58,11 +58,12 @@ public class OptionMenu  extends AccountInfo{
 		
 		/*Display Account Type Menu with  Selection  */
 		public void getAccountType() {
+			System.out.println("--------------------------------------");
 			System.out.println("Select the Account you want to Access:  ");
-			System.out.println("Type:1 Checking Account" );
-			System.out.println("Type:2 Saving Account");
-			System.out.println("Type:3 Exit");
-			System.out.println("Choice: ");
+			System.out.println("\t\tType:1 Checking Account" );
+			System.out.println("\t\tType:2 Saving Account");
+			System.out.println("\t\tType:3 Exit");
+			System.out.println("Enter your Choice: ");
 				selection = menuInput.nextInt();
 				
 				switch(selection) {
@@ -76,8 +77,18 @@ public class OptionMenu  extends AccountInfo{
 				getAccountType();
 				}
 		}
+		public static void displayWelcome()
+	    {
+	        System.out.println("====================================================");
+	        System.out.println("\t\tWelcome to ABC Bank ATM! ");
+	        System.out.println("====================================================");
+	        System.out.println("\t\t Developed by Mr.Sagar Godambe ");
+	        System.out.println("----------------------------------------------------");
+	    }
 		/*Display Checking Account Menu with selection */
 		public void getChecking() {
+
+			System.out.println("--------------------------------------");
 			System.out.println("Checking Account ");
 			System.out.println("Type 1-View Balance ");
 			System.out.println("Type 2-Withdraw Funds ");
@@ -108,6 +119,8 @@ public class OptionMenu  extends AccountInfo{
 		}
 		/*Display Saving Account Menu with selection */
 		public void getSaving() {
+
+			System.out.println("--------------------------------------");
 			System.out.println("Saving Account: ");
 			System.out.println("Type 1-View Balance ");
 			System.out.println("Type 2-Withdraw  Funds ");
